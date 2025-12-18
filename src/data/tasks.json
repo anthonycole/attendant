@@ -1,0 +1,127 @@
+[
+  {
+    "id": "task-001",
+    "customer_id": "cust-001",
+    "subject": "Noise complaint from upstairs neighbor",
+    "description": "Resident reports loud music and footsteps from unit 401 during late night hours. Issue has been ongoing for several days.",
+    "status": "in_progress",
+    "priority": "medium",
+    "category": "noise_complaint",
+    "assigned_to": "staff-001",
+    "assigned_at": "2024-11-10T09:00:00Z",
+    "created_at": "2024-11-10T08:30:00Z",
+    "updated_at": "2024-11-10T09:00:00Z",
+    "due_date": "2024-11-15T17:00:00Z",
+    "tags": ["noise", "complaint", "recurring"],
+    "summary": "Ongoing noise complaint requiring neighbor mediation and policy enforcement.",
+    "strata_scheme_id": "strata-scheme-1",
+    "metadata": {
+      "reported_unit": "401",
+      "time_of_incidents": ["22:30", "23:15", "00:45"],
+      "previous_complaints": 0
+    }
+  },
+  {
+    "id": "task-002",
+    "customer_id": "cust-002", 
+    "subject": "Parking stall blocked by visitor",
+    "description": "Assigned parking stall P-23 has been blocked by an unknown vehicle for 3 days. Resident cannot park in designated spot.",
+    "status": "open",
+    "priority": "high",
+    "category": "parking",
+    "strata_scheme_id": "strata-scheme-2",
+    "created_at": "2024-11-09T14:20:00Z",
+    "updated_at": "2024-11-09T14:20:00Z",
+    "due_date": "2024-11-12T17:00:00Z",
+    "tags": ["parking", "violation", "urgent"],
+    "summary": "Blocked parking stall requiring immediate towing action.",
+    "metadata": {
+      "vehicle_license": "ABC123",
+      "stall_number": "P-23",
+      "photo_evidence": true
+    }
+  },
+  {
+    "id": "task-003",
+    "customer_id": "cust-003",
+    "subject": "Kitchen faucet leak repair",
+    "description": "Kitchen faucet has developed a significant leak. Water is dripping constantly and resident is concerned about water damage.",
+    "status": "waiting_on_committee",
+    "priority": "high", 
+    "category": "maintenance",
+    "assigned_to": "staff-002",
+    "assigned_at": "2024-11-08T10:15:00Z",
+    "created_at": "2024-11-08T09:45:00Z",
+    "updated_at": "2024-11-09T16:30:00Z",
+    "due_date": "2024-11-13T17:00:00Z",
+    "tags": ["plumbing", "leak", "urgent"],
+    "summary": "Kitchen faucet leak requiring plumber assessment and repair approval.",
+    "metadata": {
+      "contractor_estimate": "$350",
+      "emergency_repair": false,
+      "insurance_claim": false
+    }
+  },
+  {
+    "id": "task-004",
+    "customer_id": "cust-004",
+    "subject": "Elevator maintenance scheduling",
+    "description": "Annual elevator inspection and maintenance needs to be scheduled. Building has two elevators that require coordinated service.",
+    "status": "open",
+    "priority": "medium",
+    "category": "maintenance",
+    "created_at": "2024-11-07T13:00:00Z",
+    "updated_at": "2024-11-07T13:00:00Z",
+    "due_date": "2024-11-20T17:00:00Z", 
+    "tags": ["elevator", "annual", "maintenance"],
+    "summary": "Annual elevator inspection and maintenance coordination required.",
+    "metadata": {
+      "elevator_count": 2,
+      "last_inspection": "2023-11-15",
+      "service_provider": "ABC Elevators"
+    }
+  },
+  {
+    "id": "task-005",
+    "customer_id": "cust-005",
+    "subject": "Guest suite booking inquiry",
+    "description": "Resident wants to book the guest suite for family visit next month. Needs availability and booking process information.",
+    "status": "resolved",
+    "priority": "low",
+    "category": "common_property",
+    "assigned_to": "staff-001",
+    "assigned_at": "2024-11-05T11:00:00Z",
+    "resolved_at": "2024-11-06T14:30:00Z",
+    "created_at": "2024-11-05T10:30:00Z",
+    "updated_at": "2024-11-06T14:30:00Z",
+    "resolution_notes": "Provided booking form and available dates. Guest suite booked for Nov 25-27.",
+    "tags": ["guest-suite", "booking", "resolved"],
+    "summary": "Guest suite booking inquiry successfully resolved with reservation confirmed.",
+    "metadata": {
+      "requested_dates": ["2024-11-25", "2024-11-26", "2024-11-27"],
+      "booking_fee": "$75/night",
+      "confirmation_sent": true
+    }
+  },
+  {
+    "id": "task-006",
+    "customer_id": "cust-001",
+    "subject": "Package delivery issue",
+    "description": "Multiple packages have gone missing from the mailroom. Resident suspects theft and wants security review.",
+    "status": "in_progress",
+    "priority": "high",
+    "category": "other",
+    "assigned_to": "staff-002", 
+    "assigned_at": "2024-11-11T08:00:00Z",
+    "created_at": "2024-11-11T07:45:00Z",
+    "updated_at": "2024-11-11T08:00:00Z",
+    "due_date": "2024-11-14T17:00:00Z",
+    "tags": ["security", "theft", "mailroom"],
+    "summary": "Missing packages requiring security camera review and policy updates.",
+    "metadata": {
+      "missing_packages": 3,
+      "estimated_value": "$280",
+      "camera_review_requested": true
+    }
+  }
+]

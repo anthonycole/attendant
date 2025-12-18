@@ -1,0 +1,110 @@
+[
+  {
+    "id": "strata-scheme-1",
+    "scheme_name": "The Parkside Gardens",
+    "plan_number": "SP 95847",
+    "scheme_type": "residential",
+    "address": {
+      "street": "123 George Street",
+      "suburb": "Sydney",
+      "state": "NSW",
+      "postcode": "2000",
+      "country": "Australia"
+    },
+    "owners_corporation": {
+      "name": "The Owners Corporation Strata Plan 95847",
+      "abn": "12 345 678 901",
+      "registration_number": "OC95847",
+      "registered_office": "Level 15, 123 George Street, Sydney NSW 2000"
+    },
+    "total_lots": 84,
+    "total_units": 84,
+    "established_date": "2019-03-15T00:00:00Z",
+    "strata_manager": {
+      "company_name": "Premier Strata Management Pty Ltd",
+      "license_number": "20001234",
+      "contact_person": "Sarah Mitchell",
+      "email": "sarah.mitchell@premierstrata.com.au",
+      "phone": "+61 2 9876 5432"
+    },
+    "created_at": "2024-01-01T00:00:00Z",
+    "updated_at": "2024-11-13T00:00:00Z",
+    "metadata": {
+      "building_features": ["pool", "gym", "concierge", "parking"],
+      "insurance_policy_number": "INS-2024-95847",
+      "last_agm_date": "2024-03-15"
+    }
+  },
+  {
+    "id": "strata-scheme-2",
+    "scheme_name": "Harbour View Towers",
+    "plan_number": "SP 87654",
+    "scheme_type": "mixed_use",
+    "address": {
+      "street": "456 Circular Quay",
+      "suburb": "Sydney",
+      "state": "NSW",
+      "postcode": "2000",
+      "country": "Australia"
+    },
+    "owners_corporation": {
+      "name": "The Owners Corporation Strata Plan 87654",
+      "abn": "98 765 432 109",
+      "registration_number": "OC87654",
+      "registered_office": "Suite 1205, 456 Circular Quay, Sydney NSW 2000"
+    },
+    "total_lots": 156,
+    "total_units": 120,
+    "established_date": "2021-09-30T00:00:00Z",
+    "strata_manager": {
+      "company_name": "Citywide Strata Services",
+      "license_number": "20005678",
+      "contact_person": "Michael Chen",
+      "email": "m.chen@citywidesstrata.com.au",
+      "phone": "+61 2 9123 4567"
+    },
+    "created_at": "2024-01-01T00:00:00Z",
+    "updated_at": "2024-11-13T00:00:00Z",
+    "metadata": {
+      "building_features": ["retail", "offices", "apartments", "parking", "roof_terrace"],
+      "insurance_policy_number": "INS-2024-87654",
+      "last_agm_date": "2024-09-30"
+    }
+  },
+  {
+    "id": "strata-scheme-3",
+    "scheme_name": "Bondi Beach Apartments",
+    "plan_number": "SP 11223",
+    "scheme_type": "residential",
+    "address": {
+      "street": "789 Campbell Parade",
+      "suburb": "Bondi Beach",
+      "state": "NSW",
+      "postcode": "2026",
+      "country": "Australia"
+    },
+    "owners_corporation": {
+      "name": "The Owners Corporation Strata Plan 11223",
+      "abn": "55 123 456 789",
+      "registration_number": "OC11223",
+      "registered_office": "Unit 1, 789 Campbell Parade, Bondi Beach NSW 2026"
+    },
+    "total_lots": 24,
+    "total_units": 24,
+    "established_date": "2015-06-20T00:00:00Z",
+    "strata_manager": {
+      "company_name": "Beachside Property Management",
+      "license_number": "20009876",
+      "contact_person": "Emma Thompson",
+      "email": "emma@beachsidepm.com.au",
+      "phone": "+61 2 9365 4321"
+    },
+    "created_at": "2024-01-01T00:00:00Z",
+    "updated_at": "2024-11-13T00:00:00Z",
+    "metadata": {
+      "building_features": ["beach_access", "parking", "storage"],
+      "insurance_policy_number": "INS-2024-11223",
+      "last_agm_date": "2024-06-20"
+    }
+  }
+]

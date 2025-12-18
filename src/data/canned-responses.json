@@ -1,0 +1,66 @@
+[
+  {
+    "id": "cr-001",
+    "category": "committee_overview",
+    "title": "Send Overview to Committee",
+    "description": "Formal summary for committee review",
+    "subject": "Task Overview: {{task_subject}}",
+    "body": "Dear Committee Members,\n\nPlease find below an overview of the current task requiring your attention:\n\n**Task:** {{task_subject}}\n**Category:** {{task_category}}\n**Priority:** {{task_priority}}\n**Status:** {{task_status}}\n\n**Description:**\n{{task_description}}\n\n**Customer Information:**\nName: {{customer_name}}\nUnit: {{customer_unit}}\nEmail: {{customer_email}}\n\n**Next Steps:**\nPlease review and provide guidance on how to proceed with this matter.\n\nBest regards,\nProperty Management Team"
+  },
+  {
+    "id": "cr-002",
+    "category": "move_in",
+    "title": "Move-In Procedures",
+    "description": "Complete move-in information for new residents",
+    "subject": "Welcome to {{building_name}} - Move-In Information",
+    "body": "Dear {{customer_name}},\n\nWelcome to {{building_name}}! We're delighted to have you join our community.\n\n**Move-In Checklist:**\n\n1. **Building Access:**\n   - Your access fob/key is ready for collection at the concierge desk\n   - Building entry code: [To be provided upon collection]\n   - Garage remote controls can be purchased for $50 each\n\n2. **Move-In Booking:**\n   - Please book the service elevator at least 48 hours in advance\n   - Contact: [Building Manager] - [Phone Number]\n   - A $500 refundable bond is required for elevator use\n\n3. **Utilities & Services:**\n   - Electricity and gas are your responsibility to connect\n   - Internet/NBN connection details attached\n   - Rubbish collection is Tuesday and Friday evenings\n\n4. **Building Amenities:**\n   - Gym access hours: 6 AM - 10 PM daily\n   - Pool area: 7 AM - 9 PM\n   - BBQ facilities available for booking\n\n5. **Important Contacts:**\n   - Building Manager: [Phone/Email]\n   - Emergency Maintenance: [24/7 Number]\n   - Concierge: [Phone Number]\n\n6. **By-Laws & Rules:**\n   - Quiet hours: 10 PM - 7 AM\n   - Pet policy: [Details]\n   - Parking regulations attached\n\nIf you have any questions, please don't hesitate to contact us.\n\nWelcome home!\n\nProperty Management Team"
+  },
+  {
+    "id": "cr-003",
+    "category": "noise_complaint",
+    "title": "Noise Complaint Response",
+    "description": "Standard response to noise complaints",
+    "subject": "Re: Noise Complaint - Unit {{customer_unit}}",
+    "body": "Dear {{customer_name}},\n\nThank you for bringing this matter to our attention. We take all noise complaints seriously as we're committed to maintaining a peaceful living environment for all residents.\n\n**Actions We're Taking:**\n\n1. We have documented your complaint with the following details:\n   - Date/Time: {{incident_datetime}}\n   - Location: {{incident_location}}\n   - Nature of disturbance: {{incident_description}}\n\n2. We will:\n   - Issue a formal notice to the resident(s) in question\n   - Remind all residents of building quiet hours (10 PM - 7 AM)\n   - Monitor the situation closely over the next 14 days\n   - Follow up with you in one week to check on the situation\n\n3. If the issue continues, please document:\n   - Specific dates and times\n   - Duration of the disturbance\n   - Nature of the noise\n\n**Building Quiet Hours:**\nAll residents are required to maintain reasonable noise levels, particularly between 10 PM and 7 AM on weekdays, and 11 PM to 8 AM on weekends.\n\nWe will keep you updated on our progress. Please contact us immediately if the issue escalates or continues.\n\nThank you for your patience.\n\nProperty Management Team"
+  },
+  {
+    "id": "cr-004",
+    "category": "parking",
+    "title": "Parking Violation Notice",
+    "description": "Notice for parking violations",
+    "subject": "Parking Violation Notice - {{vehicle_details}}",
+    "body": "Dear Resident,\n\nWe have received a report regarding a parking violation in our building:\n\n**Violation Details:**\n- Vehicle: {{vehicle_details}}\n- Location: {{parking_location}}\n- Date/Time: {{violation_datetime}}\n- Violation Type: {{violation_type}}\n\n**Parking Regulations:**\n- Resident parking is permitted only in designated allocated spaces\n- Visitor parking is limited to marked visitor bays (maximum 3 hours)\n- Loading zones are for temporary use only (maximum 30 minutes)\n- Fire zones and disabled bays must remain clear at all times\n- Unauthorized vehicles may be towed at owner's expense\n\n**Required Action:**\nPlease ensure your vehicle is parked in your allocated space immediately. Repeated violations may result in:\n- Formal warnings\n- Fines as per building by-laws\n- Vehicle towing at owner's expense\n\nIf you believe this notice has been issued in error, please contact us within 48 hours with:\n- Your unit number\n- Vehicle registration\n- Allocated parking space number\n\nThank you for your cooperation in maintaining fair parking access for all residents.\n\nProperty Management Team"
+  },
+  {
+    "id": "cr-005",
+    "category": "maintenance",
+    "title": "Maintenance Scheduled",
+    "description": "Confirmation that maintenance has been scheduled",
+    "subject": "Maintenance Scheduled - {{task_subject}}",
+    "body": "Dear {{customer_name}},\n\nThank you for reporting the maintenance issue. We're pleased to confirm that we have scheduled the necessary repairs.\n\n**Maintenance Details:**\n- Issue: {{task_description}}\n- Scheduled Date: {{scheduled_date}}\n- Estimated Time: {{scheduled_time}}\n- Expected Duration: {{estimated_duration}}\n- Contractor: {{contractor_name}}\n\n**Access Requirements:**\n{{access_instructions}}\n\n**What to Expect:**\n- The contractor will contact you 30 minutes before arrival\n- Please ensure access to the affected area\n- A follow-up inspection may be required\n- You'll receive a completion report once finished\n\n**If You Need to Reschedule:**\nPlease contact us at least 24 hours before the scheduled time. Last-minute cancellations may incur rescheduling fees.\n\n**Emergency Contact:**\nIf the issue becomes urgent before the scheduled date, please call our emergency maintenance line: [24/7 Number]\n\nWe appreciate your patience and cooperation.\n\nProperty Management Team"
+  },
+  {
+    "id": "cr-006",
+    "category": "levy_inquiry",
+    "title": "Levy Payment Information",
+    "description": "Standard response for levy inquiries",
+    "subject": "Re: Levy Inquiry - Unit {{customer_unit}}",
+    "body": "Dear {{customer_name}},\n\nThank you for your inquiry regarding strata levies for Unit {{customer_unit}}.\n\n**Current Levy Information:**\n- Quarterly Levy: ${{levy_amount}}\n- Due Date: {{levy_due_date}}\n- Payment Status: {{payment_status}}\n\n**What Your Levies Cover:**\n1. Building Insurance\n2. Common Area Maintenance (gardens, hallways, lobby)\n3. Utilities for Common Areas\n4. Building Management Fees\n5. Sinking Fund Contributions\n6. Repairs and Maintenance Reserve\n\n**Payment Methods:**\n- Direct Debit (recommended): Contact us to set up\n- Bank Transfer: [Account Details]\n- BPay: Biller Code [####] - Reference: {{bpay_reference}}\n- Credit Card: Call [Phone Number]\n\n**Payment Plans:**\nIf you're experiencing financial difficulty, please contact us to discuss payment plan options. We're here to help.\n\n**Levy Breakdown:**\nFor a detailed breakdown of how your levies are allocated, please find the latest financial statement attached or request a copy from our office.\n\nIf you have any further questions about your levies, please don't hesitate to contact us.\n\nBest regards,\nProperty Management Team"
+  },
+  {
+    "id": "cr-007",
+    "category": "general",
+    "title": "General Acknowledgment",
+    "description": "Acknowledge receipt of inquiry",
+    "subject": "Re: {{task_subject}}",
+    "body": "Dear {{customer_name}},\n\nThank you for contacting us regarding {{task_subject}}.\n\nWe have received your inquiry and are currently reviewing the matter. Our team will investigate and respond to you with a detailed update within 2-3 business days.\n\n**Reference Number:** {{task_id}}\n\nIf this matter is urgent, please contact our office directly:\n- Phone: [Office Number]\n- Email: [Email Address]\n- Hours: Monday-Friday, 9 AM - 5 PM\n\nFor after-hours emergencies, please call: [Emergency Number]\n\nWe appreciate your patience and will be in touch soon.\n\nBest regards,\nProperty Management Team"
+  },
+  {
+    "id": "cr-008",
+    "category": "bylaws",
+    "title": "By-Law Information",
+    "description": "Information about building by-laws",
+    "subject": "Building By-Laws - {{building_name}}",
+    "body": "Dear {{customer_name}},\n\nThank you for your inquiry about our building by-laws.\n\n**Key By-Laws:**\n\n1. **Noise & Disturbances:**\n   - Quiet hours: 10 PM - 7 AM (weekdays), 11 PM - 8 AM (weekends)\n   - No loud music, parties, or construction during quiet hours\n   - Residents must minimize impact noise (footsteps, moving furniture)\n\n2. **Common Property:**\n   - No items to be stored in hallways or common areas\n   - Bicycles must be stored in designated areas only\n   - No alterations to common property without approval\n\n3. **Pets:**\n   - All pets must be registered with building management\n   - Dogs must be on leash in common areas\n   - Owners must clean up after pets immediately\n   - Excessive barking/noise from pets is not permitted\n\n4. **Renovations:**\n   - All renovations require prior approval\n   - Work permitted Monday-Friday 8 AM - 5 PM, Saturday 9 AM - 4 PM\n   - No renovations on Sundays or public holidays\n   - Notification to neighbors required 7 days in advance\n\n5. **Short-Term Letting:**\n   - {{short_term_letting_policy}}\n\n**Full By-Laws Document:**\nA complete copy of the building by-laws is attached. You can also find them on our resident portal.\n\n**Violations:**\nBy-law violations may result in warnings, fines, or legal action. Please ensure you're familiar with all applicable by-laws.\n\nIf you have questions about any specific by-law, please don't hesitate to ask.\n\nBest regards,\nProperty Management Team"
+  }
+]

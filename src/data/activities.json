@@ -1,0 +1,123 @@
+[
+  {
+    "id": "activity-001",
+    "task_id": "task-001",
+    "type": "status_update",
+    "timestamp": "2024-11-10T09:00:00Z",
+    "author": "Property Manager",
+    "content": "Task assigned to maintenance team. Initial assessment scheduled for tomorrow morning.",
+    "status_change": {
+      "from": "open",
+      "to": "in_progress"
+    },
+    "strata_scheme_id": "strata-scheme-1"
+  },
+  {
+    "id": "activity-002", 
+    "task_id": "task-001",
+    "type": "communication",
+    "timestamp": "2024-11-10T10:30:00Z",
+    "author": "Customer Service",
+    "content": "Contacted resident via phone to confirm access for maintenance inspection. Scheduled for 11 AM tomorrow.",
+    "communication_details": {
+      "channel": "phone",
+      "direction": "outbound",
+      "duration": 180
+    },
+    "strata_scheme_id": "strata-scheme-1"
+  },
+  {
+    "id": "activity-003",
+    "task_id": "task-001", 
+    "type": "internal_note",
+    "timestamp": "2024-11-10T14:15:00Z",
+    "author": "Maintenance Coordinator",
+    "content": "Reviewed complaint details. Similar issue reported 3 months ago from same unit. May need to implement noise policy reminder for building.",
+    "strata_scheme_id": "strata-scheme-1"
+  },
+  {
+    "id": "activity-004",
+    "task_id": "task-002",
+    "type": "status_update", 
+    "timestamp": "2024-11-09T14:20:00Z",
+    "author": "Security Officer",
+    "content": "Parking violation documented. Vehicle details recorded and towing notice posted.",
+    "status_change": {
+      "from": "open",
+      "to": "in_progress"
+    },
+    "strata_scheme_id": "strata-scheme-1"
+  },
+  {
+    "id": "activity-005",
+    "task_id": "task-002",
+    "type": "communication", 
+    "timestamp": "2024-11-09T15:45:00Z",
+    "author": "Property Manager",
+    "content": "Sent email notification to all residents about parking policy and visitor parking procedures.",
+    "communication_details": {
+      "channel": "email", 
+      "direction": "outbound",
+      "recipients": "all_residents"
+    },
+    "strata_scheme_id": "strata-scheme-1"
+  },
+  {
+    "id": "activity-006",
+    "task_id": "task-003",
+    "type": "status_update",
+    "timestamp": "2024-11-09T16:30:00Z", 
+    "author": "Maintenance Team",
+    "content": "Elevator inspection completed. Minor adjustment needed to door sensor. Repair scheduled for next week.",
+    "status_change": {
+      "from": "in_progress", 
+      "to": "waiting_on_committee"
+    },
+    "strata_scheme_id": "strata-scheme-1"
+  },
+  {
+    "id": "activity-007",
+    "task_id": "task-003",
+    "type": "internal_note",
+    "timestamp": "2024-11-09T17:00:00Z",
+    "author": "Building Manager", 
+    "content": "Contacted elevator service company for quote. Estimated repair cost $450. Committee approval required for expenditure.",
+    "strata_scheme_id": "strata-scheme-1"
+  },
+  {
+    "id": "activity-008",
+    "task_id": "task-004",
+    "type": "communication",
+    "timestamp": "2024-11-07T13:00:00Z",
+    "author": "Customer Service",
+    "content": "Spoke with resident about water leak. Confirmed it's coming from unit above. Arranging plumber inspection.",
+    "communication_details": {
+      "channel": "phone",
+      "direction": "inbound", 
+      "duration": 420
+    },
+    "strata_scheme_id": "strata-scheme-2"
+  },
+  {
+    "id": "activity-009",
+    "task_id": "task-004",
+    "type": "status_update",
+    "timestamp": "2024-11-07T15:30:00Z",
+    "author": "Maintenance Coordinator",
+    "content": "Emergency plumber dispatched. Leak source identified as faulty pipe connection. Repair in progress.",
+    "status_change": {
+      "from": "open",
+      "to": "in_progress"
+    },
+    "strata_scheme_id": "strata-scheme-2"
+  },
+  {
+    "id": "activity-010",
+    "task_id": "task-005",
+    "type": "internal_note",
+    "timestamp": "2024-11-06T14:30:00Z",
+    "author": "Building Supervisor",
+    "content": "HVAC system inspection revealed dirty air filters in common areas. Scheduled replacement and cleaning for tomorrow.",
+    "strata_scheme_id": "strata-scheme-2"
+  }
+]

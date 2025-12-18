@@ -1,0 +1,98 @@
+[
+  {
+    "id": "cust-001",
+    "strata_scheme_id": "strata-scheme-1",
+    "email": "john.smith@email.com",
+    "first_name": "John",
+    "last_name": "Smith", 
+    "phone": "+61 412 345 678",
+    "unit_number": "301",
+    "lot_number": "15",
+    "entitlement": 85,
+    "customer_type": "owner",
+    "created_at": "2024-01-15T08:00:00Z",
+    "updated_at": "2024-01-15T08:00:00Z",
+    "notes": "Strata committee member, prompt with maintenance requests",
+    "metadata": {
+      "parking_stall": "P-42",
+      "locker": "L-15",
+      "emergency_contact": "+61 412 987 654",
+      "committee_position": "treasurer"
+    }
+  },
+  {
+    "id": "cust-002",
+    "strata_scheme_id": "strata-scheme-2",
+    "email": "sarah.johnson@email.com",
+    "first_name": "Sarah",
+    "last_name": "Johnson",
+    "phone": "+1 (555) 234-5678",
+    "unit_number": "205",
+    "strata_plan_id": "LMS1234",
+    "customer_type": "owner",
+    "created_at": "2024-02-01T10:30:00Z",
+    "updated_at": "2024-02-01T10:30:00Z",
+    "notes": "Committee member, prefers email communication",
+    "metadata": {
+      "parking_stall": "P-23", 
+      "locker": "L-08",
+      "committee_role": "treasurer"
+    }
+  },
+  {
+    "id": "cust-003",
+    "strata_scheme_id": "strata-scheme-1",
+    "email": "mike.wilson@email.com",
+    "first_name": "Mike",
+    "last_name": "Wilson",
+    "phone": "+1 (555) 345-6789",
+    "unit_number": "102",
+    "strata_plan_id": "LMS1234",
+    "customer_type": "owner",
+    "created_at": "2024-01-20T14:15:00Z",
+    "updated_at": "2024-01-20T14:15:00Z",
+    "notes": "New resident, ask about building amenities",
+    "metadata": {
+      "parking_stall": "P-05",
+      "move_in_date": "2024-01-15"
+    }
+  },
+  {
+    "id": "cust-004",
+    "strata_scheme_id": "strata-scheme-1",
+    "email": "lisa.brown@email.com",
+    "first_name": "Lisa",
+    "last_name": "Brown",
+    "phone": "+1 (555) 456-7890",
+    "unit_number": "405",
+    "strata_plan_id": "LMS1234",
+    "customer_type": "committee_member", 
+    "created_at": "2024-01-10T09:00:00Z",
+    "updated_at": "2024-01-10T09:00:00Z",
+    "notes": "Strata president, handles policy questions",
+    "metadata": {
+      "parking_stall": "P-67",
+      "locker": "L-32",
+      "committee_role": "president"
+    }
+  },
+  {
+    "id": "cust-005",
+    "strata_scheme_id": "strata-scheme-1",
+    "email": "david.lee@email.com",
+    "first_name": "David",
+    "last_name": "Lee",
+    "phone": "+1 (555) 567-8901",
+    "unit_number": "508",
+    "strata_plan_id": "LMS1234",
+    "customer_type": "owner",
+    "created_at": "2024-02-10T11:45:00Z",
+    "updated_at": "2024-02-10T11:45:00Z",
+    "notes": "Works from home, available during business hours",
+    "metadata": {
+      "parking_stall": "P-81",
+      "locker": "L-45",
+      "preferred_contact": "phone"
+    }
+  }
+]

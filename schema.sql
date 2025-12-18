@@ -1,0 +1,127 @@
+-- WARNING: This schema is for context only and is not meant to be run.
+-- Table order and constraints may not be valid for execution.
+
+CREATE TABLE public.customers (
+  id uuid NOT NULL DEFAULT uuid_generate_v4(),
+  email character varying NOT NULL UNIQUE,
+  first_name character varying,
+  last_name character varying,
+  phone character varying,
+  unit_number character varying,
+  strata_plan_id uuid,
+  customer_type character varying CHECK (customer_type::text = ANY (ARRAY['owner'::character varying, 'tenant'::character varying, 'committee_member'::character varying, 'contractor'::character varying, 'other'::character varying]::text[])),
+  created_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP,
+  updated_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP,
+  deleted_at timestamp with time zone,
+  notes text,
+  metadata jsonb DEFAULT '{}'::jsonb,
+  CONSTRAINT customers_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.private_comments (
+  id uuid NOT NULL DEFAULT uuid_generate_v4(),
+  ticket_id uuid NOT NULL,
+  comment_text text NOT NULL,
+  author_id uuid NOT NULL,
+  created_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP,
+  updated_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP,
+  deleted_at timestamp with time zone,
+  parent_comment_id uuid,
+  metadata jsonb DEFAULT '{}'::jsonb,
+  CONSTRAINT private_comments_pkey PRIMARY KEY (id),
+  CONSTRAINT private_comments_ticket_id_fkey FOREIGN KEY (ticket_id) REFERENCES public.tickets(id),
+  CONSTRAINT private_comments_parent_comment_id_fkey FOREIGN KEY (parent_comment_id) REFERENCES public.private_comments(id)
+);
+CREATE TABLE public.thread_attachments (
+  id uuid NOT NULL DEFAULT uuid_generate_v4(),
+  thread_id uuid NOT NULL,
+  filename character varying NOT NULL,
+  content_type character varying,
+  file_size_bytes bigint,
+  storage_url text NOT NULL,
+  storage_key character varying,
+  is_inline boolean DEFAULT false,
+  content_id character varying,
+  created_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP,
+  metadata jsonb DEFAULT '{}'::jsonb,
+  CONSTRAINT thread_attachments_pkey PRIMARY KEY (id),
+  CONSTRAINT thread_attachments_thread_id_fkey FOREIGN KEY (thread_id) REFERENCES public.threads(id)
+);
+CREATE TABLE public.threads (
+  id uuid NOT NULL DEFAULT uuid_generate_v4(),
+  ticket_id uuid NOT NULL,
+  channel_type character varying NOT NULL CHECK (channel_type::text = ANY (ARRAY['email'::character varying, 'web'::character varying, 'internal'::character varying]::text[])),
+  external_thread_id character varying,
+  external_message_id character varying,
+  from_address character varying,
+  to_addresses ARRAY,
+  cc_addresses ARRAY,
+  subject character varying,
+  body_text text,
+  body_html text,
+  direction character varying CHECK (direction::text = ANY (ARRAY['inbound'::character varying, 'outbound'::character varying]::text[])),
+  status character varying DEFAULT 'received'::character varying CHECK (status::text = ANY (ARRAY['received'::character varying, 'processing'::character varying, 'processed'::character varying, 'failed'::character varying, 'sent'::character varying]::text[])),
+  received_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP,
+  processed_at timestamp with time zone,
+  sent_at timestamp with time zone,
+  created_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP,
+  is_visible_to_customer boolean DEFAULT true,
+  created_by uuid,
+  headers jsonb DEFAULT '{}'::jsonb,
+  metadata jsonb DEFAULT '{}'::jsonb,
+  CONSTRAINT threads_pkey PRIMARY KEY (id),
+  CONSTRAINT threads_ticket_id_fkey FOREIGN KEY (ticket_id) REFERENCES public.tickets(id)
+);
+CREATE TABLE public.ticket_activities (
+  id uuid NOT NULL DEFAULT uuid_generate_v4(),
+  ticket_id uuid NOT NULL,
+  activity_type character varying NOT NULL,
+  description text,
+  actor_id uuid,
+  actor_type character varying,
+  old_value text,
+  new_value text,
+  related_ticket_id uuid,
+  created_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP,
+  metadata jsonb DEFAULT '{}'::jsonb,
+  CONSTRAINT ticket_activities_pkey PRIMARY KEY (id),
+  CONSTRAINT ticket_activities_ticket_id_fkey FOREIGN KEY (ticket_id) REFERENCES public.tickets(id),
+  CONSTRAINT ticket_activities_related_ticket_id_fkey FOREIGN KEY (related_ticket_id) REFERENCES public.tickets(id)
+);
+CREATE TABLE public.ticket_merges (
+  id uuid NOT NULL DEFAULT uuid_generate_v4(),
+  source_ticket_id uuid NOT NULL,
+  target_ticket_id uuid NOT NULL,
+  merged_by uuid NOT NULL,
+  merge_reason text,
+  merged_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP,
+  metadata jsonb DEFAULT '{}'::jsonb,
+  CONSTRAINT ticket_merges_pkey PRIMARY KEY (id),
+  CONSTRAINT ticket_merges_source_ticket_id_fkey FOREIGN KEY (source_ticket_id) REFERENCES public.tickets(id),
+  CONSTRAINT ticket_merges_target_ticket_id_fkey FOREIGN KEY (target_ticket_id) REFERENCES public.tickets(id)
+);
+CREATE TABLE public.tickets (
+  id uuid NOT NULL DEFAULT uuid_generate_v4(),
+  customer_id uuid NOT NULL,
+  subject character varying NOT NULL,
+  status character varying NOT NULL DEFAULT 'open'::character varying CHECK (status::text = ANY (ARRAY['open'::character varying, 'in_progress'::character varying, 'waiting_on_customer'::character varying, 'waiting_on_committee'::character varying, 'resolved'::character varying, 'closed'::character varying, 'merged'::character varying]::text[])),
+  priority character varying DEFAULT 'medium'::character varying CHECK (priority::text = ANY (ARRAY['low'::character varying, 'medium'::character varying, 'high'::character varying, 'urgent'::character varying]::text[])),
+  category character varying CHECK (category::text = ANY (ARRAY['maintenance'::character varying, 'repairs'::character varying, 'noise_complaint'::character varying, 'parking'::character varying, 'pets'::character varying, 'common_property'::character varying, 'levy_inquiry'::character varying, 'insurance'::character varying, 'by_laws'::character varying, 'meeting_inquiry'::character varying, 'other'::character varying]::text[])),
+  assigned_to uuid,
+  assigned_at timestamp with time zone,
+  resolved_at timestamp with time zone,
+  closed_at timestamp with time zone,
+  resolution_notes text,
+  merged_into_ticket_id uuid,
+  merged_at timestamp with time zone,
+  merged_by uuid,
+  created_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP,
+  updated_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP,
+  deleted_at timestamp with time zone,
+  first_response_at timestamp with time zone,
+  due_date timestamp with time zone,
+  tags ARRAY,
+  metadata jsonb DEFAULT '{}'::jsonb,
+  CONSTRAINT tickets_pkey PRIMARY KEY (id),
+  CONSTRAINT tickets_customer_id_fkey FOREIGN KEY (customer_id) REFERENCES public.customers(id),
+  CONSTRAINT tickets_merged_into_ticket_id_fkey FOREIGN KEY (merged_into_ticket_id) REFERENCES public.tickets(id)
+);
