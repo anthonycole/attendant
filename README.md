@@ -1,6 +1,6 @@
-# Steward
+# Attendant
 
-Steward is a modern issue management and customer support application built with Next.js. It provides a comprehensive solution for managing customer tickets, communications, and profiles in a strata/property management context.
+Attendant is a modern issue management and customer support application built with Next.js. It provides a comprehensive solution for managing customer tickets, communications, and profiles in a strata/property management context.
 
 ## Features
 
