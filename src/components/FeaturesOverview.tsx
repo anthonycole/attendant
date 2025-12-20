@@ -7,203 +7,157 @@ import {
   SimpleGrid,
   Text,
   VStack,
-  HStack,
   Icon,
-  Divider,
 } from '@chakra-ui/react';
 import {
   FiShield,
-  FiClock,
-  FiCheckCircle,
-  FiMessageSquare,
-  FiEye,
-  FiHeart,
   FiZap,
-  FiCalendar,
-  FiUsers,
-  FiFileText,
-  FiMail,
-  FiBarChart2,
-  FiSmartphone,
-  FiCpu,
+  FiCheckCircle,
   FiLink,
 } from 'react-icons/fi';
 
-interface Feature {
+interface FeatureCategory {
   title: string;
   description: string;
   icon: any;
-}
-
-interface FeatureCategory {
-  title: string;
-  subtitle: string;
-  icon: any;
   color: string;
-  features: Feature[];
+  highlights: string[];
 }
 
 export function FeaturesOverview() {
   const categories: FeatureCategory[] = [
     {
       title: 'Build Trust',
-      subtitle: 'Keep owners informed and confident',
+      description: 'Keep owners informed and confident with transparency at every step',
       icon: FiShield,
       color: 'blue.500',
-      features: [
-        {
-          title: 'Complete Transparency',
-          description: 'Owners see detailed histories and status updates for every request',
-          icon: FiEye,
-        },
-        {
-          title: 'Proactive Updates',
-          description: 'Send status updates before owners need to ask',
-          icon: FiMessageSquare,
-        },
-        {
-          title: 'Never Miss Deadlines',
-          description: 'Automatic SLA tracking ensures timely responses every time',
-          icon: FiClock,
-        },
-        {
-          title: 'Personal Touch',
-          description: 'Maintain detailed owner profiles for personalized service',
-          icon: FiHeart,
-        },
+      highlights: [
+        'Complete communication histories',
+        'Proactive status updates',
+        'Never miss SLA deadlines',
+        'Personalized owner profiles',
       ],
     },
     {
       title: 'Save Time',
-      subtitle: 'Work smarter with streamlined workflows',
+      description: 'Work smarter with streamlined workflows and intelligent automation',
       icon: FiZap,
       color: 'green.500',
-      features: [
-        {
-          title: 'All Communications in One Place',
-          description: 'Handle emails, calls, SMS, and web inquiries from a single interface',
-          icon: FiMessageSquare,
-        },
-        {
-          title: 'Instant Context',
-          description: 'Access complete timelines and property details immediately',
-          icon: FiCalendar,
-        },
-        {
-          title: 'AI-Powered Chatbot',
-          description: 'Automated responses to common owner queries available 24/7',
-          icon: FiCpu,
-        },
-        {
-          title: 'Quick Access to Contractors',
-          description: 'Find trusted trades and owners instantly from organized directories',
-          icon: FiUsers,
-        },
+      highlights: [
+        'Unified inbox for all communications',
+        'Instant access to property context',
+        '24/7 AI chatbot support',
+        'Quick contractor directory',
       ],
     },
     {
       title: 'Deliver Consistency',
-      subtitle: 'Ensure excellence in every interaction',
+      description: 'Ensure excellence in every interaction with standardized processes',
       icon: FiCheckCircle,
       color: 'purple.500',
-      features: [
-        {
-          title: 'Professional Templates',
-          description: 'Use templates to ensure clear, on-brand communication every time',
-          icon: FiFileText,
-        },
-        {
-          title: 'Standardized Processes',
-          description: 'Task templates guarantee nothing is forgotten',
-          icon: FiCheckCircle,
-        },
-        {
-          title: 'Team Performance Tracking',
-          description: 'Monitor response times and workload across your team',
-          icon: FiBarChart2,
-        },
-        {
-          title: 'Complete Audit Trail',
-          description: 'Track every action and communication for accountability',
-          icon: FiCalendar,
-        },
+      highlights: [
+        'Professional communication templates',
+        'Standardized task workflows',
+        'Team performance tracking',
+        'Complete audit trail',
       ],
     },
     {
       title: 'Integrations',
-      subtitle: 'Connect with the tools you already use',
+      description: 'Connect seamlessly with Microsoft Outlook, Teams, WhatsApp, and calendars',
       icon: FiLink,
       color: 'orange.500',
-      features: [
-        {
-          title: 'Microsoft Outlook',
-          description: 'Send and receive emails, sync calendars, and use actionable messages directly from Outlook',
-          icon: FiMail,
-        },
-        {
-          title: 'Microsoft Teams',
-          description: 'Get real-time notifications and collaborate on tasks without switching platforms',
-          icon: FiMessageSquare,
-        },
-        {
-          title: 'WhatsApp Business',
-          description: 'Communicate with owners via WhatsApp with automatic logging and task creation',
-          icon: FiSmartphone,
-        },
-        {
-          title: 'Calendar Sync',
-          description: 'Sync deadlines and meetings with Outlook, Google Calendar, and Apple Calendar',
-          icon: FiCalendar,
-        },
+      highlights: [
+        'Native Outlook email integration',
+        'Microsoft Teams notifications',
+        'WhatsApp Business messaging',
+        'Multi-calendar sync',
       ],
     },
   ];
 
   return (
     <Container maxW="container.xl" py={10}>
-      <VStack spacing={12} align="stretch">
-        {/* Header */}
-        <Box textAlign="center" maxW="3xl" mx="auto">
-          <Heading size="xl" mb={3}>
-            Deliver more effective strata management faster
+      <VStack spacing={8} align="stretch">
+        {/* Hero Section */}
+        <Box textAlign="center" maxW="4xl" mx="auto">
+          <Heading size="2xl" mb={4} lineHeight="shorter">
+            Cheaper, more efficient management
           </Heading>
-          <Text color="gray.600" fontSize="lg">
-            Streamline workflows, strengthen owner relationships, and save hours every week
+          <Text color="gray.600" fontSize="xl" lineHeight="tall">
+            Save time, build trust, and deliver consistent service
           </Text>
         </Box>
 
-        {/* Feature Categories */}
-        {categories.map((category, idx) => (
-          <Box key={idx}>
-            <HStack spacing={3} mb={6}>
-              <Icon as={category.icon} boxSize={8} color={category.color} />
-              <Box>
-                <Heading size="lg">{category.title}</Heading>
-                <Text color="gray.600" fontSize="md">
-                  {category.subtitle}
-                </Text>
-              </Box>
-            </HStack>
+        {/* Features Grid */}
+        <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={8} pt={4}>
+          {categories.map((category, idx) => (
+            <Box
+              key={idx}
+              p={6}
+              borderRadius="lg"
+              border="1px solid"
+              borderColor="gray.200"
+              bg="white"
+              transition="all 0.2s"
+              _hover={{
+                borderColor: category.color,
+                shadow: 'md',
+                transform: 'translateY(-4px)',
+              }}
+            >
+              <VStack align="start" spacing={4} h="full">
+                <Icon as={category.icon} boxSize={10} color={category.color} />
 
-            <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} pl={{ base: 0, md: 11 }}>
-              {category.features.map((feature, featureIdx) => (
-                <HStack key={featureIdx} spacing={4} align="start">
-                  <Icon as={feature.icon} boxSize={5} color={category.color} mt={1} flexShrink={0} />
-                  <Box>
-                    <Text fontWeight="semibold" fontSize="md" mb={1}>
-                      {feature.title}
-                    </Text>
-                    <Text color="gray.600" fontSize="sm" lineHeight="tall">
-                      {feature.description}
-                    </Text>
-                  </Box>
-                </HStack>
-              ))}
-            </SimpleGrid>
+                <Box>
+                  <Heading size="md" mb={2}>
+                    {category.title}
+                  </Heading>
+                  <Text color="gray.600" fontSize="sm" lineHeight="tall">
+                    {category.description}
+                  </Text>
+                </Box>
 
-            {idx < categories.length - 1 && <Divider mt={12} />}
-          </Box>
-        ))}
+                <VStack align="start" spacing={2} flex="1" w="full">
+                  {category.highlights.map((highlight, hIdx) => (
+                    <Text
+                      key={hIdx}
+                      fontSize="sm"
+                      color="gray.700"
+                      _before={{
+                        content: '"•"',
+                        marginRight: '8px',
+                        color: category.color,
+                        fontWeight: 'bold',
+                      }}
+                    >
+                      {highlight}
+                    </Text>
+                  ))}
+                </VStack>
+              </VStack>
+            </Box>
+          ))}
+        </SimpleGrid>
+
+        {/* Value Proposition */}
+        <Box
+          textAlign="center"
+          mt={12}
+          p={8}
+          bg="gray.50"
+          borderRadius="lg"
+          maxW="3xl"
+          mx="auto"
+        >
+          <Heading size="lg" mb={3}>
+            Everything you need in one platform
+          </Heading>
+          <Text color="gray.600" fontSize="md" lineHeight="tall">
+            Stop juggling multiple tools. Attendant brings together communication, task management,
+            directories, and integrations into one seamless experience designed specifically for strata managers.
+          </Text>
+        </Box>
       </VStack>
     </Container>
   );

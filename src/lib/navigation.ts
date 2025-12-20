@@ -1,5 +1,5 @@
 import { IconType } from 'react-icons';
-import { FiInbox, FiMessageSquare, FiTool, FiBarChart2, FiStar } from 'react-icons/fi';
+import { FiInbox, FiMessageSquare, FiTool, FiBarChart2, FiStar, FiHome } from 'react-icons/fi';
 
 export interface NavigationItem {
   id: string;
@@ -10,6 +10,13 @@ export interface NavigationItem {
 }
 
 export const NAVIGATION_ITEMS: NavigationItem[] = [
+  {
+    id: 'dashboard',
+    label: 'Dashboard',
+    href: '/',
+    icon: FiHome,
+    description: 'Quick dashboard overview'
+  },
   {
     id: 'tasks',
     label: 'Tasks',
