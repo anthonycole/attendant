@@ -1,5 +1,5 @@
 import { IconType } from 'react-icons';
-import { FiInbox, FiMessageSquare, FiTool, FiBarChart2 } from 'react-icons/fi';
+import { FiInbox, FiMessageSquare, FiTool, FiBarChart2, FiStar } from 'react-icons/fi';
 
 export interface NavigationItem {
   id: string;
@@ -37,6 +37,13 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
     href: '/trades',
     icon: FiTool,
     description: 'Contractor and trade management'
+  },
+  {
+    id: 'features',
+    label: 'Features',
+    href: '/features',
+    icon: FiStar,
+    description: 'Platform features overview'
   }
 ];
 
